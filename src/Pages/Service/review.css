@@ -1,0 +1,17 @@
+.mainParent{
+    display: flex;
+}
+.left{
+    flex: 8;
+
+}
+.right  {
+    flex: 4;
+}
+
+@media screen and (max-width:668px) {
+    .mainParent{
+        display: block;
+    }
+    
+}

@@ -40,7 +40,7 @@ const Service = () => {
                   height="24"
                 />
               </svg>
-              <span className="relative">Our </span>
+              <span className="relative">{" "}</span>
             </span>{" "}
             Best Services
           </h2>

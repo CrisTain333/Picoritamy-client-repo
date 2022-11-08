@@ -16,7 +16,7 @@ const Gallery = () => {
                 Some Best
                 shots {" "}
               </h2>
-              <p className="text-base text-gray-700 md:text-lg">
+              <p className="text-base text-gray-700 md:text-lg mb-10">
               “If your photos aren't good enough, then you're not close enough.”
               </p>
               <Link

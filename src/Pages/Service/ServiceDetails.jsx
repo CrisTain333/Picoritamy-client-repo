@@ -1,11 +1,12 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom"; 
 import { FaEnvira ,FaDollarSign } from "react-icons/fa";
+import Reviews from "./Reviews";
 
 const ServiceDetails = () => {
   const { img, title, description,Features,price } = useLoaderData();
   return (
-    <div>
+    <>
       <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
         <div className="mx-auto sm:text-center lg:max-w-2xl">
           <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
@@ -79,13 +80,15 @@ const ServiceDetails = () => {
                 <p class="leading-relaxed text-lg mb-4">{description}</p>
                 <p class="text-black inline-flex items-center text-lg font-bold">Price: ${price}
                 </p>
-                <div class="w-16 h-1 bg-primary rounded mt-2 mb-4"></div>
+                <div class=" w-full lg:w-20 h-1 bg-primary rounded mt-2 mb-4"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
+
+      <Reviews />
+    </>
   );
 };
 

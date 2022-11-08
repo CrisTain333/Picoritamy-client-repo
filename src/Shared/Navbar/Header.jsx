@@ -6,7 +6,7 @@ const Header = () => {
   const li = (
     <>
       <li>
-        <Link>Services</Link>
+        <Link to='/services'>Services</Link>
       </li>
       <li>
         <Link>My Reviews</Link>
