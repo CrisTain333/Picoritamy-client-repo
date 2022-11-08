@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../images/logo.png'
 
 const Footer = () => {
+	
     return (
         <div>
           <footer className="px-4 divide-y dark:bg-gray-800 dark:text-gray-100 mt-10">

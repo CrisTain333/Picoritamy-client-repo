@@ -1,22 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
+import AuthContext from "../../Context/Context";
 
 const Header = () => {
+  const {singoutUser , user} = useContext(AuthContext)
   const li = (
     <>
       <li>
         <Link to='/services'>Services</Link>
       </li>
-      <li>
+
+      {
+        user?<>
+        <li>
         <Link>My Reviews</Link>
       </li>
       <li>
         <Link>Add Services</Link>
       </li>
       <li>
-        <Link>Logout</Link>
+        <Link onClick={singoutUser}>Logout</Link>
       </li>
+
+        </>:<>
+<li>
+  <Link to='/login'>Log In</Link>
+</li>
+
+        </>
+      }
+      
+    
     </>
   );
 
