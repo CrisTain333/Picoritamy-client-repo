@@ -2,7 +2,7 @@ import React from "react";
 import { MdDeleteForever } from "react-icons/md";
 import { AiOutlineEdit } from "react-icons/ai";
 
-const Row = ({data}) => {
+const Row = ({data , handleDelete}) => {
     const{serviceName,_id,message,time} = data
   return (
     <>
@@ -22,7 +22,7 @@ const Row = ({data}) => {
           </div>
         </div>
         <div className="flex justify-start ml2 pt-4 space-x-4 align-center">
-            <button className="btn btn-circle bg-red-500" ><MdDeleteForever className="text-white text-3xl"/></button>
+            <button className="btn btn-circle bg-red-500"  onClick={()=>handleDelete(_id)} ><MdDeleteForever className="text-white text-3xl"/></button>
             <button className="btn btn-circle bg-green-500" ><AiOutlineEdit className="text-white text-3xl"/></button>
         </div>
       </div>

@@ -17,9 +17,7 @@ const Reviews = ({data , title}) => {
   },[reviws])
 
 
-const handleDelete =()=>{
-    
-}
+
 
   return (
     <>
