@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 
-const HomeServiceCard = ({ data }) => {
+const ServiceCard = ({ data }) => {
   const { img, title, description, rating, price } = data;
   return (
     <>
@@ -23,7 +23,7 @@ const HomeServiceCard = ({ data }) => {
           </p>
           <div className="flex items-center flex-wrap ">
             <Link className="text-primary inline-flex items-center md:mb-2 lg:mb-0" to={'/'}>
-              Book Now
+            View details
               <svg
                 className="w-4 h-4 ml-2"
                 viewBox="0 0 24 24"
@@ -48,4 +48,4 @@ const HomeServiceCard = ({ data }) => {
   );
 };
 
-export default HomeServiceCard;
+export default ServiceCard;

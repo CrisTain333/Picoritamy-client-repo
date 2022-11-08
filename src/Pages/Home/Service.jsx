@@ -1,6 +1,6 @@
-import { data } from "autoprefixer";
 import React, { useEffect, useState } from "react";
-import HomeServiceCard from "./HomeServiceCard";
+import { Link } from "react-router-dom";
+import ServiceCard from "../../Shared/Service Card/ServiceCard";
 const Service = () => {
   const [services,setServices]=useState([])
 
@@ -53,7 +53,7 @@ const Service = () => {
           {
             services.map(e=>{
               return(
-          <HomeServiceCard key={e._id} data={e} />
+          <ServiceCard key={e._id} data={e} />
 
               )
             })
@@ -62,12 +62,12 @@ const Service = () => {
           </div>
         </div>
         <div className="flex justify-center items-center">
-          <a
-            href="/"
+          <Link
+            to="/services"
             className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide bg-primary text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
           >
             See All
-          </a>
+          </Link>
         </div>
       </div>
     </>
