@@ -15,6 +15,12 @@ const Reviews = ({data , title}) => {
     .then(res=>res.json())
     .then(data => setReviws(data))
   },[reviws])
+
+
+const handleDelete =()=>{
+    
+}
+
   return (
     <>
       <div className="p-6 py-12 shadow-md">
