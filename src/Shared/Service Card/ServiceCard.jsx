@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 
 const ServiceCard = ({ data }) => {
-  const { img, title, description, rating, price } = data;
+  const { img, title, description, rating, price,_id } = data;
   return (
     <>
     <PhotoProvider>
@@ -27,7 +27,7 @@ const ServiceCard = ({ data }) => {
             Price : ${price}
           </p>
           <div className="flex items-center flex-wrap ">
-            <Link className="text-primary inline-flex items-center md:mb-2 lg:mb-0" to={'/'}>
+            <Link className="text-primary inline-flex items-center md:mb-2 lg:mb-0" to={`/services/${_id}`}>
             View details
               <svg
                 className="w-4 h-4 ml-2"

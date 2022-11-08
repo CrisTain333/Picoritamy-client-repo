@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import g1 from '../../images/g1.jpeg'
 import g2 from '../../images/g2.jpg'
 import g3 from '../../images/g3.jpg'
@@ -18,6 +19,12 @@ const Gallery = () => {
               <p className="text-base text-gray-700 md:text-lg">
               “If your photos aren't good enough, then you're not close enough.”
               </p>
+              <Link
+                href="/"
+                className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide bg-primary text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+              >
+                See More
+              </Link>
             </div>
           </div>
           <div className="flex items-center justify-center -mx-4 lg:pl-8">
