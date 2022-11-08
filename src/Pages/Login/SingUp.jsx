@@ -1,10 +1,13 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../Context/Context";
 
 const SingUp = () => {
   const { crateUser, updateUser,googleLogin } = useContext(AuthContext);
   const [error, setError] = useState("");
+  let navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -29,7 +32,7 @@ const SingUp = () => {
       .then((result) => {
         const user = result.user;
         updateUser(name, photoUrl);
-        console.log(user);
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         const error = err.message;
@@ -40,7 +43,7 @@ const SingUp = () => {
   const handleGoogleLogin = () => {
     googleLogin()
     .then(result =>{
-
+      navigate(from, { replace: true });
     })
     .catch(err=>{
         const errorMessaage = err.message;

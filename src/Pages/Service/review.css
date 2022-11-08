@@ -4,8 +4,6 @@
 .left{
     flex: 8;
     margin-right: 10px;
-    /* display: grid;
-    grid-template-columns: repeat(2,1fr); */
 
 }
 .right  {
@@ -15,13 +13,6 @@
 @media screen and (max-width:668px) {
     .mainParent{
         display: block;
-    }
-    .left{
-        flex: 8;
-        /* display: grid;
-        grid-template-columns: repeat(1,1fr);
-        margin: 0px auto; */
-    
     }
     
 }

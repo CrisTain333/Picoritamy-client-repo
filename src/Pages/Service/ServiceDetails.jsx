@@ -4,7 +4,7 @@ import { FaEnvira ,FaDollarSign } from "react-icons/fa";
 import Reviews from "./Reviews";
 
 const ServiceDetails = () => {
-  const { img, title, description,Features,price } = useLoaderData();
+  const { img, title, description,Features,price ,_id } = useLoaderData();
   return (
     <>
       <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
@@ -87,7 +87,7 @@ const ServiceDetails = () => {
         </div>
       </section>
 
-      <Reviews />
+      <Reviews data={_id} title={title}/>
     </>
   );
 };

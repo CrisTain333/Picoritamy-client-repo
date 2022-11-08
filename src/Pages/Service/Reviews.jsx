@@ -1,12 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./review.css";
 import AddReview from "./AddReview";
 import ReviewCard from "./ReviewCard";
 import { Link } from "react-router-dom";
 import { FaLock } from "react-icons/fa";
 import AuthContext from "../../Context/Context";
-const Reviews = () => {
+const Reviews = ({data , title}) => {
+    const [reviws,setReviws]=useState([])
   const {user}= useContext(AuthContext);
+
+
+  useEffect(()=>{
+    fetch(`http://localhost:5000/review/${data}`)
+    .then(res=>res.json())
+    .then(data => setReviws(data))
+  },[reviws])
   return (
     <>
       <div className="p-6 py-12 shadow-md">
@@ -21,12 +29,18 @@ const Reviews = () => {
       </div>
       <div className="mainParent mt-10 ">
         <div className="left">
-          <ReviewCard />
+          {
+            reviws.map(e=>{
+                return(
+                    <ReviewCard  key={e._id} data={e}/>
+                )
+            })
+          }
         </div>
 
         <div className="right  ">
           {user ? (
-            <AddReview />
+            <AddReview data={data} title={title}  />
           ) : (
             <>
               <div className="h-40 flex items-center justify-center">
