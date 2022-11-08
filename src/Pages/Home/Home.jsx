@@ -2,7 +2,7 @@ import React from "react";
 import Service from "./Service";
 import Gallery from "./Gallery";
 import About from "./About"
-// import mainImage from ''
+import mainImage from '../../images/CourtenayWeddingPhotographer_686.jpg'
 
 const Home = () => {
   return (
@@ -19,7 +19,7 @@ const Home = () => {
           </svg>
           <img
             className="object-cover w-full h-56 rounded-sm shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
-            src="https://images.squarespace-cdn.com/content/v1/5e9b56bd70b35e438cecee35/1629657999844-DKDV28LMW0VVQ0YY5I5I/CourtenayWeddingPhotographer_686.jpg?format=1000w"
+            src={mainImage}
             alt=""
           />
         </div>
@@ -55,7 +55,7 @@ const Home = () => {
       <Service/>
       </div>
 
-      <h1 class="title-font sm:text-4xl text-3xl mb-10 font-medium text-gray-900 text-center">About Me</h1>
+      <h1 className="title-font sm:text-4xl text-3xl mb-10 font-medium text-gray-900 text-center">About Me</h1>
 
       <About></About>
 
