@@ -8,6 +8,7 @@ import MyReviews from "../Pages/Reviews/MyReviews";
 import UpdateReview from "../Pages/Reviews/UpdateReview";
 import MainService from "../Pages/Service/MainService";
 import ServiceDetails from "../Pages/Service/ServiceDetails";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
     {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/reviews',
-                element : <MyReviews />
+                 element :<ProtectedRoute><MyReviews /></ProtectedRoute>
             },
             {
                 path:'/review/update/:id',
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/add/service',
-                element: <AddService />
+                element: <ProtectedRoute><AddService /></ProtectedRoute>
 
             }
         ]

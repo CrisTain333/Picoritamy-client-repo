@@ -23,11 +23,13 @@ const Header = () => {
             <Link onClick={singoutUser}>Logout</Link>
           </li>
           <li>
-            <div className="avatar">
-              <div className="w-11 rounded-full ring-slate-600 ring-offset-4">
-                <img src={user?.photoURL} alt=''/>
+           
+              <div className="avatar">
+                <div className="  w-12 rounded-full  ring-slate-600 ring-offset-4">
+                  <img src={user?.photoURL} alt="" />
+                </div>
               </div>
-            </div>
+          
           </li>
         </>
       ) : (
@@ -63,7 +65,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2  rounded-box w-52"
             >
               {li}
             </ul>

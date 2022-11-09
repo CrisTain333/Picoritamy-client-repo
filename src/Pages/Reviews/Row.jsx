@@ -2,11 +2,15 @@ import React from "react";
 import { MdDeleteForever } from "react-icons/md";
 import { AiOutlineEdit } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import NoReview from "./NoReview";
 
 const Row = ({ data, handleDelete }) => {
   const { serviceName, _id, message, time } = data;
   return (
     <>
+
+    {
+     
       <div className="p-2 my-10 bg-gray-100 text-gray-900 rounded-md">
         <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
           <div className="flex flex-col">
@@ -33,6 +37,8 @@ const Row = ({ data, handleDelete }) => {
           </Link>
         </div>
       </div>
+    }
+     
     </>
   );
 };

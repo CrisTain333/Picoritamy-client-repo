@@ -3,6 +3,7 @@ import Service from "./Service";
 import Gallery from "./Gallery";
 import About from "./About"
 import mainImage from '../../images/CourtenayWeddingPhotographer_686.jpg'
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -39,12 +40,12 @@ const Home = () => {
               the power you hold!"
             </p>
             <div className="flex items-center">
-              <a
-                href="/services"
+              <Link
+                to="/services"
                 className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide bg-primary text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
               >
                 Get started
-              </a>
+              </Link>
             </div>
           </div>
         </div>

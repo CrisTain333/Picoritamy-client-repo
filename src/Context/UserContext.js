@@ -39,8 +39,8 @@ const UserContext = ({ children }) => {
       .catch((error) => {});
   };
   const singoutUser = () => {
-    localStorage.removeItem('genius-token');
     setLoading(true);
+    localStorage.removeItem('token');
    return signOut(auth)
   };
 
@@ -62,7 +62,7 @@ const UserContext = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ loginUser, crateUser, updateUser , googleLogin,singoutUser , user}}>
+    <AuthContext.Provider value={{ loginUser, crateUser, updateUser , googleLogin,singoutUser , user,loading,singoutUser}}>
       {children}
     </AuthContext.Provider>
   );

@@ -2,15 +2,28 @@ import React, { useContext, useEffect, useState } from "react";
 import AuthContext from "../../Context/Context";
 import Row from "./Row";
 import './mains.css'
+import NoReview from "./NoReview";
 import toast, { Toaster } from "react-hot-toast";
 const MyReviews = () => {
-    const {user} = useContext(AuthContext)
+  const {user,singoutUser} = useContext(AuthContext)
 const [data,setData]=useState([]);
+console.log(data.length)
+
 
 useEffect(()=>{
 
-    fetch(`http://localhost:5000/review?email=${user?.email}`)
-    .then( res => res.json())
+    fetch(`http://localhost:5000/review?email=${user?.email}`,{
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+    .then((res) => {
+        if (res.status === 401 || res.status === 403) {
+          return singoutUser();
+        }
+
+        return res.json();
+      })
     .then(data => {
         setData(data)
         console.log(data)
@@ -34,22 +47,17 @@ const handleDelete =(id)=>{
 
 }
 
-
-
-    
-
-
   return (
     <div className="mains">
     <Toaster position="top-right" reverseOrder={false} />
       {
-        data.map(e => {
+        data.length === 0?<NoReview/>:data?.map(e => {
             return(
                 <Row key={e._id} handleDelete={handleDelete} data={e}></Row>
             )
         })
-       
       }
+
     </div>
   );
 };
