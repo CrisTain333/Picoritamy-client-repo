@@ -15,7 +15,7 @@ const ServiceCard = ({ data }) => {
       </PhotoView>
         <div className="p-5 border border-t-0">
           <Link
-            to="/"
+            to={`/services/${_id}`}
             aria-label="Category"
             title="Visit the East"
             className="inline-block mb-3 text-2xl font-bold leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"

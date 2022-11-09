@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom"; 
 import { FaEnvira ,FaDollarSign } from "react-icons/fa";
 import Reviews from "./Reviews";
 
 const ServiceDetails = () => {
   const { img, title, description,Features,price ,_id } = useLoaderData();
+
+
+
+
+
   return (
     <>
       <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
@@ -65,10 +70,10 @@ const ServiceDetails = () => {
                   <div className="w-12 h-1 bg-primary rounded mt-2 mb-4"></div>
                   <div className="">
                     {
-                        Features.map(e=>{
+                        Features?.map(e=>{
                             return(
                                 <ul>
-                                    <li className="text-gray-500 py-4 text-start font-semibold flex items-center justify-start "><FaEnvira className="text-orange-500 text-2xl"/> {e.name}</li>
+                                    <li className="text-gray-500 py-4 text-start font-semibold flex items-center justify-start "><FaEnvira className="text-orange-500 text-2xl"/> {e?.name}</li>
                                 </ul>
                             )
                         })
@@ -87,7 +92,7 @@ const ServiceDetails = () => {
         </div>
       </section>
 
-      <Reviews data={_id} title={title}/>
+      <Reviews data={_id}  title={title}/>
     </>
   );
 };

@@ -4,34 +4,39 @@ import { Link } from "react-router-dom";
 import AuthContext from "../../Context/Context";
 
 const Header = () => {
-  const {singoutUser , user} = useContext(AuthContext)
+  const { singoutUser, user } = useContext(AuthContext);
   const li = (
     <>
       <li>
-        <Link to='/services'>Services</Link>
+        <Link to="/services">Services</Link>
       </li>
 
-      {
-        user?<>
-        <li>
-        <Link to='/reviews'>My Reviews</Link>
-      </li>
-      <li>
-        <Link>Add Services</Link>
-      </li>
-      <li>
-        <Link onClick={singoutUser}>Logout</Link>
-      </li>
-
-        </>:<>
-<li>
-  <Link to='/login'>Log In</Link>
-</li>
-
+      {user ? (
+        <>
+          <li>
+            <Link to="/reviews">My Reviews</Link>
+          </li>
+          <li>
+            <Link to="/add/service">Add Services</Link>
+          </li>
+          <li>
+            <Link onClick={singoutUser}>Logout</Link>
+          </li>
+          <li>
+            <div className="avatar">
+              <div className="w-11 rounded-full ring-slate-600 ring-offset-4">
+                <img src={user?.photoURL} alt=''/>
+              </div>
+            </div>
+          </li>
         </>
-      }
-      
-    
+      ) : (
+        <>
+          <li>
+            <Link to="/login">Log In</Link>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -59,7 +64,9 @@ const Header = () => {
             <ul
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-            >{li}</ul>
+            >
+              {li}
+            </ul>
           </div>
           <img src={Logo} className="h-20" alt="" />
           <Link to="/" className=" normal-case ">
@@ -67,9 +74,7 @@ const Header = () => {
           </Link>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal p-0">
-           {li}
-          </ul>
+          <ul className="menu menu-horizontal p-0">{li}</ul>
         </div>
       </div>
     </>

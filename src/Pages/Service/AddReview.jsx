@@ -2,7 +2,7 @@ import React, { useContext, useState} from "react";
 import AuthContext from "../../Context/Context";
 import { Toaster ,toast } from "react-hot-toast";
 
-const AddReview = ({data , title}) => {
+const AddReview = ({data , title ,handlePost }) => {
   const [error,setError]=useState('')
   const {user} = useContext(AuthContext)
 

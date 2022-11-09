@@ -5,15 +5,15 @@ import ReviewCard from "./ReviewCard";
 import { Link } from "react-router-dom";
 import { FaLock } from "react-icons/fa";
 import AuthContext from "../../Context/Context";
-const Reviews = ({data , title}) => {
-    const [reviws,setReviws]=useState([])
-  const {user}= useContext(AuthContext);
+const Reviews = ({data , title , }) => {
+  const {user}= useContext(AuthContext);  
+  const [reviws,setReviws]=useState([])
 
 
   useEffect(()=>{
     fetch(`http://localhost:5000/review/${data}`)
     .then(res=>res.json())
-    .then(data => setReviws(data))
+    .then(newdata => setReviws(newdata))
   },[reviws])
 
 
@@ -44,7 +44,7 @@ const Reviews = ({data , title}) => {
 
         <div className="right  ">
           {user ? (
-            <AddReview data={data} title={title}  />
+            <AddReview data={data} title={title}/>
           ) : (
             <>
               <div className="h-40 flex items-center justify-center">

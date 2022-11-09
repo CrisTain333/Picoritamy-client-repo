@@ -1,5 +1,4 @@
 import React from "react";
-import { FaStar } from "react-icons/fa";
 
 const ReviewCard = ({ data }) => {
   const { message, name, photo, time } = data;
