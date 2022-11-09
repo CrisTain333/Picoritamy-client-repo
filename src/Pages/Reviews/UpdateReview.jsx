@@ -3,9 +3,11 @@ import { MdDeleteForever } from "react-icons/md";
 import { GrUpdate } from "react-icons/gr";
 import { useLoaderData } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import useTitle from "../../hooks/useTitle";
 
 const UpdateReview = () => {
   const data = useLoaderData();
+  useTitle('Reviews/update')
   const { _id, message } = data;
 
   const handleUpdate = (e) => {

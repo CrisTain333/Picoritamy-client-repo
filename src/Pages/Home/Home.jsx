@@ -4,8 +4,10 @@ import Gallery from "./Gallery";
 import About from "./About"
 import mainImage from '../../images/CourtenayWeddingPhotographer_686.jpg'
 import { Link } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 const Home = () => {
+  useTitle('Home')
   return (
     <>
       <div className="relative flex flex-col-reverse py-16 lg:pt-0 lg:flex-col lg:pb-0 ">

@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../Context/Context";
+import useTitle from "../../hooks/useTitle";
 
 const SingUp = () => {
   const { crateUser, updateUser,googleLogin } = useContext(AuthContext);
   const [error, setError] = useState("");
+  useTitle('Sing Up')
   let navigate = useNavigate();
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";

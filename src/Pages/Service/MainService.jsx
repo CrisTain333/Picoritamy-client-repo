@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import AuthContext from "../../Context/Context";
+import useTitle from "../../hooks/useTitle";
 import ServiceCard from "../../Shared/Service Card/ServiceCard";
 
 const MainService = () => {
   const [serives, setServices] = useState([]);
+
+  useTitle('Service')
 
   useEffect(() => {
     fetch("http://localhost:5000/services")

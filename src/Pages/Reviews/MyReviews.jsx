@@ -4,9 +4,11 @@ import Row from "./Row";
 import './mains.css'
 import NoReview from "./NoReview";
 import toast, { Toaster } from "react-hot-toast";
+import useTitle from "../../hooks/useTitle";
 const MyReviews = () => {
   const {user,singoutUser} = useContext(AuthContext)
 const [data,setData]=useState([]);
+useTitle('Reviews')
 console.log(data.length)
 
 
