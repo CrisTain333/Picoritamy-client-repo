@@ -10,6 +10,9 @@ const Header = () => {
       <li>
         <Link to="/services">Services</Link>
       </li>
+      <li>
+        <Link to="/blog">Blog</Link>
+      </li>
 
       {user ? (
         <>
@@ -22,15 +25,7 @@ const Header = () => {
           <li>
             <Link onClick={singoutUser}>Logout</Link>
           </li>
-          <li>
-           
-              <div className="avatar">
-                <div className="  w-12 rounded-full  ring-slate-600 ring-offset-4">
-                  <img src={user?.photoURL} alt="" />
-                </div>
-              </div>
           
-          </li>
         </>
       ) : (
         <>
@@ -44,7 +39,8 @@ const Header = () => {
 
   return (
     <>
-      <div className="navbar bg-base-100 shadow-md mb-10">
+
+      <div className="navbar bg-base-100 shadow-md  mb-10">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -65,7 +61,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2  rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow  rounded-box w-52"
             >
               {li}
             </ul>
@@ -75,8 +71,23 @@ const Header = () => {
             <p className="text-xl font-medium ml-2">Picoritamy</p>
           </Link>
         </div>
-        <div className="navbar-end hidden lg:flex">
+        <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">{li}</ul>
+        </div>
+        <div className="navbar-end">
+         {
+          user&&
+          <>
+
+          <p className="text-md font-semibold mr-3">{user.displayName}</p>
+            <div className="avatar">
+              <div className="  w-12 rounded-full  ring-slate-600 ring-offset-4">
+                <img src={user?.photoURL} alt="" />
+              </div>
+            </div>
+          </> 
+          
+         }
         </div>
       </div>
     </>

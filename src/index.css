@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .main{
     width: 90%;
     margin: 0px auto;

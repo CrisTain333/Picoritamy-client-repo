@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../images/me.jpg";
 
 const About = () => {
@@ -18,11 +19,14 @@ const About = () => {
             <p className="mb-8 leading-relaxed">
             It’s amazing how one day someone walks into your life, and suddenly, you can’t remember how you lived without them.
             "With my whole heart and for my whole life"
+            "I Am Professional Wedding photographer In Bangldesh"
             </p>
             <div className="flex justify-center">
+            <Link to='/about'>
               <button className="ml-4 inline-flex bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-pink-700 rounded text-lg text-white">
-                Read More
+                Learn More
               </button>
+            </Link>
             </div>
           </div>
         </div>

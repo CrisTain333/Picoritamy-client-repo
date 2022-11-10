@@ -14,7 +14,7 @@ console.log(data.length)
 
 useEffect(()=>{
 
-    fetch(`http://localhost:5000/review?email=${user?.email}`,{
+    fetch(`https://picoritamy-server.vercel.app/review?email=${user?.email}`,{
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -31,10 +31,10 @@ useEffect(()=>{
         console.log(data)
     })
 
-},[user?.email])
+},[user?.email,singoutUser])
 
 const handleDelete =(id)=>{
-    fetch(`http://localhost:5000/review/delete/${id}`,{
+    fetch(`https://picoritamy-server.vercel.app/review/delete/${id}`,{
         method:'DELETE'
     })
     .then(res=>res.json())

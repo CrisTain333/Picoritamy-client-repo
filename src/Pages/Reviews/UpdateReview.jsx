@@ -15,14 +15,14 @@ const UpdateReview = () => {
     const form = e.target;
     const message = form.message.value;
 
-    // fetch(`http://localhost:5000/review/update/${_id}`, {
+    // fetch(`https://picoritamy-server.vercel.app/review/update/${_id}`, {
     //   method: "PUT",
     //   headers: {
     //     "Content-type": "application/json",
     //   },
     //   body:JSON.stringify(message)
     // })
-    fetch(`http://localhost:5000/review/update/${_id}`, {
+    fetch(`https://picoritamy-server.vercel.app/review/update/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

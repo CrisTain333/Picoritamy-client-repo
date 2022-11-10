@@ -8,7 +8,7 @@ const ServiceCard = ({ data }) => {
   return (
     <>
     <PhotoProvider>
-      <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm">
+      <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm" >
       <PhotoView src={img}>
 
         <img src={img} className="object-cover w-full h-64" alt="" />

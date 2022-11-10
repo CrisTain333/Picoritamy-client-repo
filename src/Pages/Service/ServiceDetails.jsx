@@ -85,7 +85,7 @@ const ServiceDetails = () => {
                 </div>
               </div>
               <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-                <p className="leading-relaxed text-lg mb-4">{description}</p>
+                <p className="leading-relaxed text-lg mb-4 inline-flex justify-center sm:justify-start">{description}</p>
                 <p className="text-black inline-flex items-center text-lg font-bold">Price: ${price}
                 </p>
                 <div className=" w-full lg:w-20 h-1 bg-primary rounded mt-2 mb-4"></div>

@@ -30,7 +30,7 @@ const AddReview = ({data , title ,handlePost }) => {
       photo,
     };
 
-    fetch("http://localhost:5000/review", {
+    fetch("https://picoritamy-server.vercel.app/review", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

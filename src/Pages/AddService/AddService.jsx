@@ -21,12 +21,13 @@ const handleSubmit= (e) =>{
         description,
         price,
         rating,
+        Features
     }
     if(rating > 5){
         return setError("Rating Must be <= 5 ")
     }
 
-    fetch(`http://localhost:5000/add/service`,{
+    fetch(`https://picoritamy-server.vercel.app/add/service`,{
         method:'POST',
         headers:{
             'Content-type':'application/json'

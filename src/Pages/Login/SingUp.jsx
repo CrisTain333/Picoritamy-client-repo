@@ -34,7 +34,24 @@ const SingUp = () => {
       .then((result) => {
         const user = result.user;
         updateUser(name, photoUrl);
-        navigate(from, { replace: true });
+        const currentUser = {
+          email: user.email,
+        };
+
+        fetch("https://picoritamy-server.vercel.app/jwt",{
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data)
+            localStorage.setItem("token", data);
+            navigate(from, { replace: true });
+          });
+
       })
       .catch((err) => {
         const error = err.message;
@@ -44,8 +61,25 @@ const SingUp = () => {
 
   const handleGoogleLogin = () => {
     googleLogin()
-    .then(result =>{
-      navigate(from, { replace: true });
+    .then(result =>{const user = result.user;
+      const currentUser = {
+        email: user.email,
+      };
+
+      fetch("https://picoritamy-server.vercel.app/jwt",{
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(currentUser),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data)
+          localStorage.setItem("token", data);
+          navigate(from, { replace: true });
+        });
+
     })
     .catch(err=>{
         const errorMessaage = err.message;

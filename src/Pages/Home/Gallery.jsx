@@ -20,7 +20,7 @@ const Gallery = () => {
               “If your photos aren't good enough, then you're not close enough.”
               </p>
               <Link
-                href="/"
+                to="/gallery"
                 className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide bg-primary text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
               >
                 See More

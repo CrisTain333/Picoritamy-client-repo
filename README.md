@@ -39,6 +39,8 @@ You Can see Her All Srvices In Service Page.\
 
 ⚫️ Used React Hot Toast To show Erros & SuccessFull Messages.
 
+⚫️ Used AOS For Animation On Review Card.
+
 
 
  ## `Frameworks & Libraries , Package We Used In This Website`
@@ -54,5 +56,7 @@ You Can see Her All Srvices In Service Page.\
  `React Hot Toast`
 
  `daysiUi`
+
+ `AOS`
 
 

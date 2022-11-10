@@ -11,7 +11,7 @@ const Reviews = ({data , title , }) => {
 
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/review/${data}`)
+    fetch(`https://picoritamy-server.vercel.app/review/${data}`)
     .then(res=>res.json())
     .then(newdata => setReviws(newdata))
   },[reviws])
