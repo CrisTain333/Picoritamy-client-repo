@@ -5,7 +5,7 @@ const Service = () => {
   const [services,setServices]=useState([])
 
   useEffect(()=>{
-    fetch('https://picoritamy-server.vercel.app/home/services')
+    fetch('https://picoritamy-server-cristain333.vercel.app/home/services')
     .then(res=>res.json())
     .then(data=>{
       setServices(data)

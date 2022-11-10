@@ -9,7 +9,7 @@ const MainService = () => {
   useTitle('Service')
 
   useEffect(() => {
-    fetch("https://picoritamy-server.vercel.app/services")
+    fetch("https://picoritamy-server-cristain333.vercel.app/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

@@ -5,16 +5,19 @@ import ReviewCard from "./ReviewCard";
 import { Link } from "react-router-dom";
 import { FaLock } from "react-icons/fa";
 import AuthContext from "../../Context/Context";
+import lock from '../../images/lock.svg'
 const Reviews = ({data , title , }) => {
   const {user}= useContext(AuthContext);  
+  const [hit,setHit]=useState(true)
   const [reviws,setReviws]=useState([])
 
 
   useEffect(()=>{
-    fetch(`https://picoritamy-server.vercel.app/review/${data}`)
+    fetch(`https://picoritamy-server-cristain333.vercel.app/review/${data}`)
     .then(res=>res.json())
     .then(newdata => setReviws(newdata))
-  },[reviws])
+    setHit(false)
+  },[hit])
 
 
 
@@ -42,22 +45,27 @@ const Reviews = ({data , title , }) => {
           }
         </div>
 
-        <div className="right  ">
+        <div className="right">
           {user ? (
-            <AddReview data={data} title={title}/>
+              <div className=" md:sticky md:top-10 ">
+              <AddReview data={data} setHit={setHit} title={title} />
+              </div>
           ) : (
             <>
-              <div className="h-40 flex items-center justify-center">
+              <div className=" md:sticky md:top-20 ">
+              <div className="h-40 mt-20 flex items-center justify-center ">
                 <Link to="/login">
                   {" "}
-                  <div className="bg-red-500  text-white  ml-24 w-16 rounded-full p-5">
-                    <FaLock className="text-xl " />
+                  <div className="  text-white  w-60 rounded-full p-5">
+                    {/* <FaLock className="text-xl " /> */}
+                    <img src={lock} alt="" />
                   </div>{" "}
                   <p className="text-red-600 text-xl font-semibold underline ">
                     {" "}
                     Please Login To Add A Review
                   </p>
                 </Link>
+              </div>
               </div>
             </>
           )}

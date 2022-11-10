@@ -6,15 +6,16 @@ import NoReview from "./NoReview";
 import toast, { Toaster } from "react-hot-toast";
 import useTitle from "../../hooks/useTitle";
 const MyReviews = () => {
-  const {user,singoutUser} = useContext(AuthContext)
+  const {user,singoutUser } = useContext(AuthContext)
 const [data,setData]=useState([]);
 useTitle('Reviews')
-console.log(data.length)
+
+
 
 
 useEffect(()=>{
 
-    fetch(`https://picoritamy-server.vercel.app/review?email=${user?.email}`,{
+    fetch(`https://picoritamy-server-cristain333.vercel.app/review?email=${user?.email}`,{
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -53,7 +54,7 @@ const handleDelete =(id)=>{
     <div className="mains">
     <Toaster position="top-right" reverseOrder={false} />
       {
-        data.length === 0?<NoReview/>:data?.map(e => {
+        data.length === 0? <NoReview/>:data?.map(e => {
             return(
                 <Row key={e._id} handleDelete={handleDelete} data={e}></Row>
             )

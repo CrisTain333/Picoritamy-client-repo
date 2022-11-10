@@ -2,7 +2,7 @@ import React, { useContext, useState} from "react";
 import AuthContext from "../../Context/Context";
 import { Toaster ,toast } from "react-hot-toast";
 
-const AddReview = ({data , title ,handlePost }) => {
+const AddReview = ({data , title ,handlePost , setHit }) => {
   const [error,setError]=useState('')
   const {user} = useContext(AuthContext)
 
@@ -29,8 +29,9 @@ const AddReview = ({data , title ,handlePost }) => {
       email,
       photo,
     };
+    setHit(true)
 
-    fetch("https://picoritamy-server.vercel.app/review", {
+    fetch("https://picoritamy-server-cristain333.vercel.app/review", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

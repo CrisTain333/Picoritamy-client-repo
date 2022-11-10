@@ -20,7 +20,7 @@ module.exports = {
 
           warning: "#EABE2E",
 
-          error: "#E73C5E",
+          error: "#E73C5E"
         },
       },
     ],

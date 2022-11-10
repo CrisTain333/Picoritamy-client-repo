@@ -27,7 +27,7 @@ const handleSubmit= (e) =>{
         return setError("Rating Must be <= 5 ")
     }
 
-    fetch(`https://picoritamy-server.vercel.app/add/service`,{
+    fetch(`https://picoritamy-server-cristain333.vercel.app/add/service`,{
         method:'POST',
         headers:{
             'Content-type':'application/json'
