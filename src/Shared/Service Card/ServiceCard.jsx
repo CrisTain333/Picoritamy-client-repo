@@ -3,14 +3,14 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 
-const ServiceCard = ({ data }) => {
+const ServiceCard = ({ data , loading }) => {
   const { img, title, description, rating, price,_id } = data;
-  return (
-    <>
-    <PhotoProvider>
+  return  (
+   
+      <PhotoProvider>
       <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm" >
       <PhotoView src={img}>
-
+  
         <img src={img} className="object-cover w-full h-64" alt="" />
       </PhotoView>
         <div className="p-5 border border-t-0">
@@ -50,8 +50,8 @@ const ServiceCard = ({ data }) => {
         </div>
       </div>
       </PhotoProvider>
-    </>
-  );
+
+  )
 };
 
 export default ServiceCard;

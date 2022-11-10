@@ -47,7 +47,6 @@ const SingUp = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data)
             localStorage.setItem("token", data);
             navigate(from, { replace: true });
           });
@@ -75,7 +74,6 @@ const SingUp = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
           localStorage.setItem("token", data);
           navigate(from, { replace: true });
         });

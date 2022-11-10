@@ -7,13 +7,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 
-## `Live Link`
-
+## `Live Link `
+https://picoritamy.web.app/
 
 
 Picoritamy is A Wedding Based Professional photographers Website .\
 He Give Wedding Photo Shoot Services .\
-You Can see Her All Srvices In Service Page.\
+You Can see Her All Srvices In Service Page.
 
  ## `Features and Functionality`
 

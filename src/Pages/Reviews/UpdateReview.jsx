@@ -7,7 +7,7 @@ import useTitle from "../../hooks/useTitle";
 
 const UpdateReview = () => {
   const data = useLoaderData();
-  useTitle('Reviews/update')
+  useTitle('Reviews-update')
   const { _id, message } = data;
 
   const handleUpdate = (e) => {
@@ -15,13 +15,6 @@ const UpdateReview = () => {
     const form = e.target;
     const message = form.message.value;
 
-    // fetch(`https://picoritamy-server.vercel.app/review/update/${_id}`, {
-    //   method: "PUT",
-    //   headers: {
-    //     "Content-type": "application/json",
-    //   },
-    //   body:JSON.stringify(message)
-    // })
     fetch(`https://picoritamy-server.vercel.app/review/update/${_id}`, {
       method: "PUT",
       headers: {

@@ -2,7 +2,7 @@ import React, { useContext, useState} from "react";
 import AuthContext from "../../Context/Context";
 import { Toaster ,toast } from "react-hot-toast";
 
-const AddReview = ({data , title ,handlePost , setHit }) => {
+const AddReview = ({data , title ,handlePost  }) => {
   const [error,setError]=useState('')
   const {user} = useContext(AuthContext)
 
@@ -29,7 +29,6 @@ const AddReview = ({data , title ,handlePost , setHit }) => {
       email,
       photo,
     };
-    setHit(true)
 
     fetch("https://picoritamy-server-cristain333.vercel.app/review", {
       method: "POST",
@@ -40,13 +39,11 @@ const AddReview = ({data , title ,handlePost , setHit }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if(data.acknowledged){
           toast.success('Review Added')
         }
       })
       .catch((error) => {
-        console.log(error);
       });
 
       setError('')

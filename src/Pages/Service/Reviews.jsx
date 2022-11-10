@@ -2,13 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import "./review.css";
 import AddReview from "./AddReview";
 import ReviewCard from "./ReviewCard";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaLock } from "react-icons/fa";
 import AuthContext from "../../Context/Context";
 import lock from '../../images/lock.svg'
 const Reviews = ({data , title , }) => {
-  const {user}= useContext(AuthContext);  
-  const [hit,setHit]=useState(true)
+  const {user}= useContext(AuthContext);
   const [reviws,setReviws]=useState([])
 
 
@@ -16,8 +15,7 @@ const Reviews = ({data , title , }) => {
     fetch(`https://picoritamy-server-cristain333.vercel.app/review/${data}`)
     .then(res=>res.json())
     .then(newdata => setReviws(newdata))
-    setHit(false)
-  },[hit])
+  },[reviws])
 
 
 
@@ -48,7 +46,7 @@ const Reviews = ({data , title , }) => {
         <div className="right">
           {user ? (
               <div className=" md:sticky md:top-10 ">
-              <AddReview data={data} setHit={setHit} title={title} />
+              <AddReview data={data}  title={title} />
               </div>
           ) : (
             <>

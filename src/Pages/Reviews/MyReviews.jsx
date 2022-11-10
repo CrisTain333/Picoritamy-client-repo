@@ -29,7 +29,6 @@ useEffect(()=>{
       })
     .then(data => {
         setData(data)
-        console.log(data)
     })
 
 },[user?.email,singoutUser])
